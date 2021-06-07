@@ -10,7 +10,8 @@
   "author": "jaojpaulo",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "typeorm": "^0.2.34"
   },
   "devDependencies": {
     "@types/express": "^4.17.12",
