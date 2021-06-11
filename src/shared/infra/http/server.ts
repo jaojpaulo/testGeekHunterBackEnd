@@ -1,6 +1,12 @@
-import expres, { Request, Response } from 'express';
+import 'reflect-metadata';
+import expres from 'express';
+
+import 'express-async-errors';
 
 import routes from './routes';
+
+import '../typeorm';
+import '../../container';
 
 const app = expres();
 

@@ -4,7 +4,10 @@ import {
   PrimaryGeneratedColumn,
   CreateDateColumn,
   UpdateDateColumn,
+  // ManyToOne,
 } from 'typeorm';
+
+// import Experience from './Experience';
 
 @Entity('jobs')
 class Job {
@@ -14,9 +17,15 @@ class Job {
   @Column()
   city: string;
 
-  /* @Column()
-  experience: string;
+  /* @ManyToOne(() => Experience, experience => experience.jobs)
+  experience: Experience;
   */
+
+  @Column()
+  experience: string;
+
+  @Column()
+  technologies: string;
 
   @CreateDateColumn()
   created_at: Date;
