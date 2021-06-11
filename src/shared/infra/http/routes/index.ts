@@ -1,11 +1,11 @@
 import { Router } from 'express';
 
-import jobRouter from '@modules/jobs/infra/http/routes/job.routes';
-import candidatesRouter from '../../../../routes/candidate.routes';
+import jobsRouter from '@modules/jobs/infra/http/routes/jobs.routes';
+// import candidatesRouter from '../../../../routes/candidate.routes';
 
 const routes = Router();
 
-routes.use('/candidate', candidatesRouter);
-routes.use('/job', jobRouter);
+routes.use('/jobs', jobsRouter);
+// routes.use('/candidate', candidatesRouter);
 
 export default routes;
