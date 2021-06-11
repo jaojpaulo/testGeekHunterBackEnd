@@ -18,6 +18,14 @@ export default class CreateJob1623022350009 implements MigrationInterface {
             type: 'varchar',
           },
           {
+            name: 'experience',
+            type: 'varchar',
+          },
+          {
+            name: 'technologies',
+            type: 'varchar',
+          },
+          {
             name: 'created_at',
             type: 'timestamp',
             default: 'now()',

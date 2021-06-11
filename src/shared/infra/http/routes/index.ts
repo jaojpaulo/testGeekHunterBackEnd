@@ -1,7 +1,7 @@
 import { Router } from 'express';
 
+import jobRouter from '@modules/jobs/infra/http/routes/job.routes';
 import candidatesRouter from '../../../../routes/candidate.routes';
-import jobRouter from '../../../../modules/jobs/infra/http/routes/job.routes';
 
 const routes = Router();
 
