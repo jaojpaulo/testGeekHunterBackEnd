@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';
 
-import CreateJobService from '../../../../../services/CreateJobService';
+import CreateJobService from '@modules/jobs/services/CreateJobService';
 
 export default class JobsController {
   public async create(request: Request, response: Response): Promise<Response> {
