@@ -5,14 +5,17 @@
   "main": "main.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev:server": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts",
+    "dev:server": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts",
     "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js"
   },
   "author": "jaojpaulo",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
     "pg": "^8.6.0",
+    "reflect-metadata": "^0.1.13",
+    "tsyringe": "^4.5.0",
     "typeorm": "^0.2.34"
   },
   "devDependencies": {
