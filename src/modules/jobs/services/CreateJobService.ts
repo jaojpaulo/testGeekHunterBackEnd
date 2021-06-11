@@ -1,7 +1,8 @@
 import { inject, injectable } from 'tsyringe';
 
-import Job from '@modules/jobs/infra/typeorm/entities/Job';
 import IJobsRepository from '../repositories/IJobsRepository';
+
+import Job from '../infra/typeorm/entities/Job';
 
 interface IRequest {
   city: string;

@@ -2,6 +2,7 @@ import { getRepository, Repository } from 'typeorm';
 
 import IJobsRepository from '@modules/jobs/repositories/IJobsRepository';
 import ICreateJobDTO from '@modules/jobs/dtos/ICreateJobDTO';
+
 import Job from '../entities/Job';
 
 class JobsRepository implements IJobsRepository {
@@ -21,6 +22,7 @@ class JobsRepository implements IJobsRepository {
       experience,
       technologies: technologies.toString(),
     });
+
     await this.ormRepository.save(job);
 
     return job;

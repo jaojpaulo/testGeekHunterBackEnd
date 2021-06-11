@@ -2,9 +2,9 @@ import { Router } from 'express';
 
 import JobsController from '../controllers/JobsController';
 
-const jobRoutes = Router();
+const jobsRoutes = Router();
 const jobsController = new JobsController();
 
-jobRoutes.post('/', jobsController.create);
+jobsRoutes.post('/', jobsController.create);
 
-export default jobRoutes;
+export default jobsRoutes;
