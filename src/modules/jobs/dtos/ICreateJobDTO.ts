@@ -1,5 +1,5 @@
 export default interface ICreateJobDTO {
   city: string;
-  experience: string;
+  experience_id: string;
   technologies: string[];
 }

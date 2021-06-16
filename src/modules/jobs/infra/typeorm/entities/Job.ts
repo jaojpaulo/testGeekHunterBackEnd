@@ -4,10 +4,11 @@ import {
   PrimaryGeneratedColumn,
   CreateDateColumn,
   UpdateDateColumn,
-  // ManyToOne,
+  ManyToOne,
+  JoinColumn,
 } from 'typeorm';
 
-// import Experience from './Experience';
+import Experience from '@modules/experience/infra/typeorm/entities/Experience';
 
 @Entity('jobs')
 class Job {
@@ -17,12 +18,12 @@ class Job {
   @Column()
   city: string;
 
-  /* @ManyToOne(() => Experience, experience => experience.jobs)
-  experience: Experience;
-  */
-
   @Column()
-  experience: string;
+  experience_id: string;
+
+  @ManyToOne(() => Experience)
+  @JoinColumn({ name: 'experience_id' })
+  experience: Experience;
 
   @Column()
   technologies: string;

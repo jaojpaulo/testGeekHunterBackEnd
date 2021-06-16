@@ -6,7 +6,7 @@ import Job from '../infra/typeorm/entities/Job';
 
 interface IRequest {
   city: string;
-  experience: string;
+  experience_id: string;
   technologies: string[];
 }
 
@@ -19,12 +19,12 @@ class CreateJobService {
 
   public async execute({
     city,
-    experience,
+    experience_id,
     technologies,
   }: IRequest): Promise<Job> {
     const job = await this.jobsRepository.create({
       city,
-      experience,
+      experience_id,
       technologies,
     });
 

@@ -14,12 +14,12 @@ class JobsRepository implements IJobsRepository {
 
   public async create({
     city,
-    experience,
+    experience_id,
     technologies,
   }: ICreateJobDTO): Promise<Job> {
     const job = this.ormRepository.create({
       city,
-      experience,
+      experience_id,
       technologies: technologies.toString(),
     });
 

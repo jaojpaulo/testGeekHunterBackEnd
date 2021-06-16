@@ -16,7 +16,7 @@ describe('CreateJob', () => {
   it('should be able to create a new job', async () => {
     const job = await createJob.execute({
       city: 'São Paulo - SP',
-      experience: '4-5 years',
+      experience_id: 'eb0e52ce-69fb-4eb2-bfac-32c568e6fa53',
       technologies: ['React JS', 'React Native'],
     });
 
