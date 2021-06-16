@@ -10,12 +10,12 @@ class CandidatesRepository implements ICandidtesRepository {
 
   public async create({
     city,
-    experience,
+    experience_id,
     technologies,
   }: ICreateCandidateDTO): Promise<Candidate> {
     const candidate = new Candidate();
 
-    Object.assign(candidate, { id: uuid, city, experience, technologies });
+    Object.assign(candidate, { id: uuid, city, experience_id, technologies });
 
     this.candidates.push(candidate);
 

@@ -6,7 +6,7 @@ import Candidate from '../infra/typeorm/entities/Candidate';
 
 interface IRequest {
   city: string;
-  experience: string;
+  experience_id: string;
   technologies: string[];
 }
 
@@ -19,12 +19,12 @@ class CreateCandidateService {
 
   public async execute({
     city,
-    experience,
+    experience_id,
     technologies,
   }: IRequest): Promise<Candidate> {
     const candidate = await this.candidatesRepository.create({
       city,
-      experience,
+      experience_id,
       technologies,
     });
 

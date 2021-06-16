@@ -5,13 +5,13 @@ import CreateCandidateService from '@modules/candidates/services/CreateCandidate
 
 export default class CandidatesController {
   public async create(request: Request, response: Response): Promise<Response> {
-    const { city, experience, technologies } = request.body;
+    const { city, experience_id, technologies } = request.body;
 
     const createCandidate = container.resolve(CreateCandidateService);
 
     const candidate = await createCandidate.execute({
       city,
-      experience,
+      experience_id,
       technologies,
     });
 
