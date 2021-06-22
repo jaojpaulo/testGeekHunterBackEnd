@@ -5,10 +5,13 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   ManyToOne,
+  ManyToMany,
   JoinColumn,
+  JoinTable,
 } from 'typeorm';
 
 import Experience from '@modules/experience/infra/typeorm/entities/Experience';
+import Technology from '@modules/technologies/infra/typeorm/entities/Technology';
 
 @Entity('jobs')
 class Job {
@@ -25,14 +28,15 @@ class Job {
   @JoinColumn({ name: 'experience_id' })
   experience: Experience;
 
-  @Column()
-  technologies: string;
-
   @CreateDateColumn()
   created_at: Date;
 
   @UpdateDateColumn()
   updated_at: Date;
+
+  @ManyToMany(() => Technology)
+  @JoinTable({ name: 'jobs_technologies' })
+  technologies: Technology[];
 }
 
 export default Job;

@@ -20,7 +20,7 @@ class JobsRepository implements IJobsRepository {
     const job = this.ormRepository.create({
       city,
       experience_id,
-      technologies: technologies.toString(),
+      technologies,
     });
 
     await this.ormRepository.save(job);

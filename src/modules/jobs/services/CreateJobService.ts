@@ -1,5 +1,6 @@
 import { inject, injectable } from 'tsyringe';
 
+import ITechnologiesRepository from '@modules/technologies/repositories/ITechnologiesRepository';
 import IJobsRepository from '../repositories/IJobsRepository';
 
 import Job from '../infra/typeorm/entities/Job';
@@ -15,6 +16,9 @@ class CreateJobService {
   constructor(
     @inject('JobsRepository')
     private jobsRepository: IJobsRepository,
+
+    @inject('TechnologiesRepository')
+    private technologiesRepository: ITechnologiesRepository,
   ) {}
 
   public async execute({
@@ -22,10 +26,14 @@ class CreateJobService {
     experience_id,
     technologies,
   }: IRequest): Promise<Job> {
+    const technology_list = await this.technologiesRepository.findByIds(
+      technologies,
+    );
+
     const job = await this.jobsRepository.create({
       city,
       experience_id,
-      technologies,
+      technologies: technology_list,
     });
 
     return job;
