@@ -1,4 +1,5 @@
 import { Column, Entity, ManyToOne } from 'typeorm';
+import { Exclude } from 'class-transformer';
 
 import Technology from '@modules/technologies/infra/typeorm/entities/Technology';
 import Candidate from './Candidate';
@@ -6,6 +7,7 @@ import Candidate from './Candidate';
 @Entity('candidates_technologies')
 class CandidateTechnology {
   @Column()
+  @Exclude()
   candidate_id: string;
 
   @Column()

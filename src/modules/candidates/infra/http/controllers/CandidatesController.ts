@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';
+import { classToClass } from 'class-transformer';
 
 import CreateCandidateService from '@modules/candidates/services/CreateCandidateService';
 
@@ -15,6 +16,6 @@ export default class CandidatesController {
       technologies,
     });
 
-    return response.json(candidate);
+    return response.json(classToClass(candidate));
   }
 }
