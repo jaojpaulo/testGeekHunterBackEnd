@@ -6,9 +6,11 @@ import {
   UpdateDateColumn,
   ManyToOne,
   JoinColumn,
+  OneToMany,
 } from 'typeorm';
 
 import Experience from '@modules/experience/infra/typeorm/entities/Experience';
+import CandidateTechnology from './CandidateTechonlogy';
 
 @Entity('candidates')
 class Candidate {
@@ -25,14 +27,17 @@ class Candidate {
   @JoinColumn({ name: 'experience_id' })
   experience: Experience;
 
-  @Column()
-  technologies: string;
-
   @CreateDateColumn()
   created_at: Date;
 
   @UpdateDateColumn()
   updated_at: Date;
+
+  @OneToMany(
+    () => CandidateTechnology,
+    candidateTechnology => candidateTechnology.candidate,
+  )
+  candidatesTechnologies: CandidateTechnology[];
 }
 
 export default Candidate;

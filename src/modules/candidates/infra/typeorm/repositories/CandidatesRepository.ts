@@ -13,14 +13,16 @@ class CandidatesRpository implements ICandidtesRepository {
   }
 
   public async create({
+    id,
     city,
     experience_id,
-    technologies,
+    technology_list,
   }: ICreateCandidateDTO): Promise<Candidate> {
     const candidate = this.ormRepository.create({
+      id,
       city,
       experience_id,
-      technologies: technologies.toString(),
+      candidatesTechnologies: technology_list,
     });
 
     await this.ormRepository.save(candidate);

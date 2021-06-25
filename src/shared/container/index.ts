@@ -9,6 +9,9 @@ import CandidatesRepository from '@modules/candidates/infra/typeorm/repositories
 import ITechnologiesRepository from '@modules/technologies/repositories/ITechnologiesRepository';
 import TechnologiesRepository from '@modules/technologies/infra/typeorm/repositories/TechnologiesRepository';
 
+import ICandidateTechnologyRepository from '@modules/candidates/repositories/ICandidateTechnologyRepository';
+import CandidateTechnologyRepository from '@modules/candidates/infra/typeorm/repositories/CandidateTechnologyRepository';
+
 container.registerSingleton<IJobsRepository>('JobsRepository', JobsRepository);
 
 container.registerSingleton<ICandidatesRepository>(
@@ -19,4 +22,9 @@ container.registerSingleton<ICandidatesRepository>(
 container.registerSingleton<ITechnologiesRepository>(
   'TechnologiesRepository',
   TechnologiesRepository,
+);
+
+container.registerSingleton<ICandidateTechnologyRepository>(
+  'CandidateTechnologyRepository',
+  CandidateTechnologyRepository,
 );
