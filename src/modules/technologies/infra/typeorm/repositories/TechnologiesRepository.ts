@@ -14,6 +14,12 @@ class TechnologiesRepository implements ITechnologiesRepository {
 
     return technologies;
   }
+
+  public async findAll(): Promise<Technology[]> {
+    const technologies = await this.ormRepository.find();
+
+    return technologies;
+  }
 }
 
 export default TechnologiesRepository;

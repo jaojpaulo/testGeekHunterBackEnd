@@ -12,6 +12,9 @@ import TechnologiesRepository from '@modules/technologies/infra/typeorm/reposito
 import ICandidateTechnologyRepository from '@modules/candidates/repositories/ICandidateTechnologyRepository';
 import CandidateTechnologyRepository from '@modules/candidates/infra/typeorm/repositories/CandidateTechnologyRepository';
 
+import IExperienceRepository from '@modules/experience/repositories/IExperienceRepository';
+import ExperienceRepository from '@modules/experience/infra/typeorm/repositories/ExperienceRepository';
+
 container.registerSingleton<IJobsRepository>('JobsRepository', JobsRepository);
 
 container.registerSingleton<ICandidatesRepository>(
@@ -27,4 +30,9 @@ container.registerSingleton<ITechnologiesRepository>(
 container.registerSingleton<ICandidateTechnologyRepository>(
   'CandidateTechnologyRepository',
   CandidateTechnologyRepository,
+);
+
+container.registerSingleton<IExperienceRepository>(
+  'ExperienceRepository',
+  ExperienceRepository,
 );
