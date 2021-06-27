@@ -19,6 +19,16 @@ export default class CreateTechnology1623887715557
             name: 'technology_name',
             type: 'varchar',
           },
+          {
+            name: 'created_at',
+            type: 'timestamp',
+            default: 'now()',
+          },
+          {
+            name: 'updated_at',
+            type: 'timestamp',
+            default: 'now()',
+          },
         ],
       }),
     );
