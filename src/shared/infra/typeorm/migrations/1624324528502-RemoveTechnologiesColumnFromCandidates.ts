@@ -10,7 +10,11 @@ export default class RemoveTechnologiesColumnFromCandidates1624324528502
   public async down(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.addColumn(
       'candidates',
-      new TableColumn({ name: 'technologies', type: 'varchar' }),
+      new TableColumn({
+        name: 'technologies',
+        type: 'varchar',
+        isNullable: true,
+      }),
     );
   }
 }

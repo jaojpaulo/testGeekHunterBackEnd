@@ -40,7 +40,11 @@ export default class AlterExperienceFieldToExperienceIdForCandidate1623808892530
 
     await queryRunner.addColumn(
       'candidates',
-      new TableColumn({ name: 'experience', type: 'varchar' }),
+      new TableColumn({
+        name: 'experience',
+        type: 'varchar',
+        isNullable: true,
+      }),
     );
   }
 }
