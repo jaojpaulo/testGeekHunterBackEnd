@@ -20,6 +20,10 @@ export default class CreateExperience1623114796906
             type: 'varchar',
           },
           {
+            name: 'weight',
+            type: 'numeric',
+          },
+          {
             name: 'created_at',
             type: 'timestamp',
             default: 'now()',
