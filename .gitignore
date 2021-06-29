@@ -6,4 +6,6 @@ build/
 coverage/
 ormconfig.json
 
+tables/
+
 dist/
