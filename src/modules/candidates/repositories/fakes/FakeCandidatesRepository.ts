@@ -1,21 +1,27 @@
 import { uuid } from 'uuidv4';
 
 import ICreateCandidateDTO from '@modules/candidates/dtos/ICreateCandidateDTO';
-import ICandidtesRepository from '../ICandidatesRepository';
+import IFindCandidatesByJobSpecDTO from '@modules/candidates/dtos/IFindCandidatesByJobSpecDTO';
+import ICandidatesRepository from '../ICandidatesRepository';
 
 import Candidate from '../../infra/typeorm/entities/Candidate';
 
-class CandidatesRepository implements ICandidtesRepository {
+class CandidatesRepository implements ICandidatesRepository {
+  findByJobSpecification(
+    data: IFindCandidatesByJobSpecDTO,
+  ): Promise<Candidate[]> {
+    throw new Error('Method not implemented.');
+  }
+
   private candidates: Candidate[] = [];
 
   public async create({
     city,
     experience_id,
-    technologies,
   }: ICreateCandidateDTO): Promise<Candidate> {
     const candidate = new Candidate();
 
-    Object.assign(candidate, { id: uuid, city, experience_id, technologies });
+    Object.assign(candidate, { id: uuid, city, experience_id });
 
     this.candidates.push(candidate);
 

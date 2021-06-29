@@ -10,12 +10,12 @@ class JobsRepository implements IJobsRepository {
 
   public async create({
     city,
-    experience,
+    experience_id,
     technologies,
   }: ICreateJobDTO): Promise<Job> {
     const job = new Job();
 
-    Object.assign(job, { id: uuid, city, experience, technologies });
+    Object.assign(job, { id: uuid, city, experience_id, technologies });
 
     this.jobs.push(job);
 
